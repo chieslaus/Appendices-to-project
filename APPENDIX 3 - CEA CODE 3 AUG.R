@@ -1,4 +1,4 @@
-#APPENDIX 3 - CEA MODEL CODE
+#APPENDIX 3 - COST-EFFECTIVENESS ANALYSIS MODEL CODE
 ############################
 
 #MALARIA MATHEMATICAL MODEL AND COST-EFFECTIVENESS ANALYSIS 2018: R CODE 2018
@@ -812,10 +812,10 @@ Malaria_res
 
 # Plot to see results on the ICER plane
 plot((Malaria_res[,2])/1000000, (Malaria_res[,1])/1000000, xlim=c(-20,100), ylim=c(-220,100), ylab="Incremental costs (Million US$)", 
-     xlab="DALY Averted (in millions)", pch=18, col=c("red", "brown", "blue", "black", "darkgrey"), main="CEA of Interventions for Malaria", cex.main=0.8)
+     xlab="DALY Averted (in millions)", pch=18, col=c("red", "brown", "blue", "black"), main="CEA of Interventions for Malaria", cex.main=0.8)
 #text((Malaria_res[,2])/1000000, (Malaria_res[,1])/1000000,label=c("LLIN only (95%)", "LLIN only (75%)", "LLIN(95%)+IRS(50%)", "LLIN(75%)+IRS(50%)"), cex=0.7, pos=2)
 legend("topright", legend=c("LLIN only (95%)", "LLIN only (75%)", "LLIN(95%)+IRS(50%)", 
-                         "LLIN(75%)+IRS(50%)"), fill = c("brown", "blue", "black", "darkgrey"), cex=0.7)
+                            "LLIN(75%)+IRS(50%)"), fill = c("red", "brown", "blue", "black"), cex=0.7)
 
 abline(a=0, b=1969, lty=3, col='black', lwd=2) #b = GDP per capita of Nigeria in 2017
 abline(v = 0, h = 0, lty=1, col="blue",lwd=1)
@@ -852,15 +852,15 @@ Disc_Malaria_res[3,]<-c(Disc_Inc_cost_irs, Disc_DALY_averted_irs, Disc_ICER_irs)
 Disc_Malaria_res[4,]<-c(Disc_Inc_cost_new_irs_scenario, Disc_DALY_averted_new_irs_scenario, Disc_ICER_new_irs_scenario)
 colnames(Disc_Malaria_res)<-c("Incremental Cost", "DALYs_averted", "ICER")
 rownames(Disc_Malaria_res)<-c("LLIN only (95%)", "LLIN only (75%)", "LLIN(95%)+IRS(50%)", 
-                         "LLIN(75%)+IRS(50%)")
+                              "LLIN(75%)+IRS(50%)")
 Disc_Malaria_res
 
 # Plot to see results on the ICER plane
 plot((Disc_Malaria_res[,2])/1000000, (Disc_Malaria_res[,1])/1000000, xlim=c(-50,120), ylim=c(-240,200), ylab="Incremental costs (Million US$)", 
-     xlab="DALY Averted (in millions)", pch=18, col=c("red", "brown", "blue", "black", "darkgrey"), main="CEA of Interventions for Malaria", cex.main=0.8)
+     xlab="DALY Averted (in millions)", pch=18, col=c("red", "brown", "blue", "black"), main="CEA of Interventions for Malaria", cex.main=0.8)
 #text((Malaria_res[,2])/1000000, (Malaria_res[,1])/1000000,label=c("LLIN only (95%)", "LLIN only (75%)", "LLIN(95%)+IRS(50%)", "LLIN(75%)+IRS(50%)"), cex=0.7, pos=2)
 legend("topright", legend=c("LLIN only (95%)", "LLIN only (75%)", "LLIN(95%)+IRS(50%)", 
-                            "LLIN(75%)+IRS(50%)"), fill = c("brown", "blue", "black", "darkgrey"), cex=0.7)
+                            "LLIN(75%)+IRS(50%)"), fill = c("red", "brown", "blue", "black"), cex=0.7)
 
 #abline(a=0, b=1969, lty=3, col='black', lwd=2) #b = GDP per capita of Nigeria in 2017
 abline(v = 0, h = 0, lty=1, col="blue",lwd=1)
